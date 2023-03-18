@@ -12,7 +12,16 @@ public class Ticket implements Comparable<Ticket> {
         this.duration = duration;
 
     }
-    /*@Override*/
+    @Override
+    public int compareTo(Ticket o) {
+        if (price < o.getPrice()) {
+            return -1;
+        }
+        if (price > o.getPrice()) {
+            return +1;
+        }
+        return 0;
+    }
 
     public int getId() {
         return id;
@@ -34,14 +43,4 @@ public class Ticket implements Comparable<Ticket> {
         return duration;
     }
 
-    @Override
-    public int compareTo(Ticket o) {
-        if (price < o.getPrice()) {
-            return -1;
-        }
-        if (price > o.getPrice()) {
-            return 1;
-        }
-        return 0;
-    }
 }

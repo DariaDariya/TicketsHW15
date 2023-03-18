@@ -58,6 +58,32 @@ public class TicketManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+    @Test
+
+    public void ticketTest() {
+        manager.add(ticket1);
+        manager.add(ticket2);
+        manager.add(ticket3);
+        manager.add(ticket4);
+        manager.add(ticket5);
+        Ticket[] expected = {};
+        Ticket[] actual = manager.findAll("Sochi", "Perm");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+
+    public void ticketTwoTest() {
+        manager.add(ticket1);
+        manager.add(ticket2);
+        manager.add(ticket3);
+        manager.add(ticket4);
+        manager.add(ticket5);
+        Ticket[] expected = {};
+        Ticket[] actual = manager.findAll("SPB", "NEW");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
 
 
